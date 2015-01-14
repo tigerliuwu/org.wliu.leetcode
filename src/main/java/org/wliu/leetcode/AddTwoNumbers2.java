@@ -5,6 +5,7 @@ import org.wliu.leetcode.test.common.ListNode;
 
 
 /**
+ * <link>http://www.programcreek.com/2012/12/add-two-numbers/</link>
  * You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
@@ -158,9 +159,11 @@ public class AddTwoNumbers2 {
         	sum = calVal;
         	if (left != null) {
         		sum += left.val;
+        		left = left.next;
         	}
         	if (right != null) {
         		sum += right.val;
+        		right = right.next;
         	}
         	if (sum >= 10) {
         		prev.next = new ListNode(sum%10);
@@ -172,8 +175,8 @@ public class AddTwoNumbers2 {
         	
         	prev = prev.next;
         	
-        	left=left==null?null:left.next;
-        	right=right == null?null:right.next;
+//        	left=left==null?null:left.next;
+//        	right=right == null?null:right.next;
         }
         
         if (calVal > 0) {
