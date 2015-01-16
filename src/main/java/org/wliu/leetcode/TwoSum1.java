@@ -18,7 +18,12 @@ import java.util.Map;
  */
 
 public class TwoSum1 {
-
+	/**
+	 * O(n*n)
+	 * @param numbers
+	 * @param target
+	 * @return
+	 */
 	public int[] twoSum(int[] numbers, int target) {
 		if (numbers==null || numbers.length <2) {
 			return null;
@@ -43,7 +48,12 @@ public class TwoSum1 {
 		return result;
 		
 	}
-	
+	/**
+	 * O(n)
+	 * @param numbers
+	 * @param target
+	 * @return
+	 */
 	public int[] twoSum2(int[] numbers, int target) {
 		if (numbers==null || numbers.length <2) {
 			return null;

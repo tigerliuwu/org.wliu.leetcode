@@ -144,7 +144,12 @@ public class AddTwoNumbers2 {
     	return result_h;
      
     }
-    
+    /**
+     * O(m+n)
+     * @param l1
+     * @param l2
+     * @return
+     */
     public ListNode addTwoNumbers3(ListNode l1, ListNode l2) {
         
         if (l1==null && l2==null) {
