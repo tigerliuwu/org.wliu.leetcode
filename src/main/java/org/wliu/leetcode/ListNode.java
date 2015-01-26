@@ -1,4 +1,4 @@
-package org.wliu.leetcode.test.common;
+package org.wliu.leetcode;
 
 /**
  * this class is for Add Two Numbers

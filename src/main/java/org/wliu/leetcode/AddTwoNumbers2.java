@@ -1,6 +1,5 @@
 package org.wliu.leetcode;
 
-import org.wliu.leetcode.test.common.ListNode;
 
 
 

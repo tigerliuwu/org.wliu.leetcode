@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.wliu.leetcode.AddTwoNumbers2;
-import org.wliu.leetcode.test.common.ListNode;
+import org.wliu.leetcode.ListNode;
 
 public class AddTwoNumbers2Test {
 
