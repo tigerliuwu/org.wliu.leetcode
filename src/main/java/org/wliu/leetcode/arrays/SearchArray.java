@@ -26,7 +26,7 @@ public class SearchArray {
 		}
 		
 		if (((arr[start+mid] < arr[start]) &&(arr[start] < val || arr[start+mid] > val)) ||
-				(arr[start+mid] > arr[start] && arr[start+mid] > val)
+				(arr[start+mid] > arr[start] && arr[start+mid] > val && arr[start] < val)
 				) {
 			return search(arr, start, mid, val);
 		} else {
