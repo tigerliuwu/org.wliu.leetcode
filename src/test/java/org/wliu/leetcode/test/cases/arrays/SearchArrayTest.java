@@ -42,5 +42,22 @@ public class SearchArrayTest {
 		assertEquals(7,SearchArray.search(datae, 0, 8, 2));
 		assertEquals(1,SearchArray.search(datae, 0, 8, 4));
 	}
+	
+	@Test
+	public void testsearch2() {
+		assertTrue(SearchArray.search2(data0, -1)==-1);
+		assertTrue(SearchArray.search2(data1, 0)==0);
+		assertTrue(SearchArray.search2(data1, 1)==-1);
+		assertTrue(SearchArray.search2(datao, 10)==-1);
+		assertTrue(SearchArray.search2(datao, 1)==2);
+		assertTrue(SearchArray.search2(datao, 0)==1);
+		assertTrue(SearchArray.search2(datao, 2)==0);
+		
+		assertEquals(-1,SearchArray.search2(datae, 10));
+		assertEquals(6,SearchArray.search2(datae, 1));
+		assertEquals(5,SearchArray.search2(datae, 0));
+		assertEquals(7,SearchArray.search2(datae, 2));
+		assertEquals(1,SearchArray.search2(datae, 4));
+	}
 
 }
