@@ -1,6 +1,6 @@
 package org.wliu.leetcode.arrays;
 
-public class SearchArray {
+public class SearchArray2 {
 	
 	public static int search(int[] arr, int start, int length, int val) {
 		
@@ -54,13 +54,18 @@ public class SearchArray {
 				return mid;
 			}
 			// arr[mid] >= arr[start] eg. 3,4,5,6,7,0,1,2 (7 >=3)
-			if (arr[mid] >= arr[start]) { 
+			if (arr[mid] > arr[start]) { 
 				if (arr[start] <= val && arr[mid] > val) { // left part
 					end = mid;
 				} else {
 					start = mid + 1;
 				}
-				
+			} else if (arr[mid] == arr[start]) {
+				if (arr[end-1] > arr[start]) { // ASC
+					start = mid + 1;
+				} else {
+					end = mid;
+				}
 			} else { // arr[mid] < arr[start] eg. 7,8,0,1,2,3,4,5,6 ( 2 < 7)
 				if (arr[mid] < val && arr[end-1] >= val) {// right part
 					start = mid + 1;
