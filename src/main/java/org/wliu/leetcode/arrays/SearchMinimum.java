@@ -26,9 +26,17 @@ public class SearchMinimum {
 			}
 			
 			if (arr[mid] >= arr[start]) {
-				start = mid + 1;
+				if (arr[end-1] >= arr[start]) {
+					end = mid;
+				} else {
+					start = mid + 1;
+				}
 			} else {
-				end = mid;
+				if (arr[end-1] >= arr[start]) {
+					end = mid;
+				} else {
+					start = mid + 1;
+				}
 			}
 			
 		}
