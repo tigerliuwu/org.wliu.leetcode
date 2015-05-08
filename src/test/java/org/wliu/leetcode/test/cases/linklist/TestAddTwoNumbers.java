@@ -1,16 +1,18 @@
 package org.wliu.leetcode.test.cases.linklist;
 
 import static org.junit.Assert.assertTrue;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.wliu.leetcode.common.LinkNode;
+import org.wliu.leetcode.common.LinkListUtils;
+import org.wliu.leetcode.common.ListNode;
 import org.wliu.leetcode.linklist.Add2Numbers;
 
 public class TestAddTwoNumbers {
 	
-	private LinkNode ln1 = null;
-	private LinkNode ln2 = null;
+	private ListNode ln1 = null;
+	private ListNode ln2 = null;
 
 	@Before
 	public void setUp() throws Exception {
@@ -21,54 +23,30 @@ public class TestAddTwoNumbers {
 	public void tearDown() throws Exception {
 	}
 	
-	private boolean compAddTrue(LinkNode nodes, int expected) {
-		LinkNode node = nodes;
-		if (node == null) {
-			if (expected ==0) {
-				return true;
-			} else {
-				return false;
-			}
-			 
-		}
-		int val = 0;
-		int loop = 1;
-		while(node !=null) {
-			val += loop * node.value;
-			node = node.next;
-			loop = 10 * loop;
-		}
-		
-		if (val == expected) {
-			return true;
-		}
-		
-		return false;
-	}
 
 	@Test
 	public void testAddTwoNumbers() {
 		Add2Numbers addInstance = new Add2Numbers();
-		LinkNode node;
+		ListNode node;
 		node  = addInstance.addTwoNumbers(ln1, ln2); //both null
-		assertTrue(compAddTrue(node, 0));
+		assertTrue(LinkListUtils.isReverseLinkedListEqualsTo(node, 0));
 		
-		ln1 = new LinkNode(9, null); // ln1 =9 ln2=null
+		ln1 = new ListNode(9); // ln1 =9 ln2=null
 		node  = addInstance.addTwoNumbers(ln1, ln2); //both null
-		assertTrue(compAddTrue(node, 9));
+		assertTrue(LinkListUtils.isReverseLinkedListEqualsTo(node, 9));
 		
-		ln1.next = new LinkNode(5, null); // ln1 =9,5 ln2=null
+		ln1.next = new ListNode(5); // ln1 =9,5 ln2=null
 		node  = addInstance.addTwoNumbers(ln1, ln2); //both null
-		assertTrue(compAddTrue(node, 59));
+		assertTrue(LinkListUtils.isReverseLinkedListEqualsTo(node, 59));
 		
 		
-		ln2 = new LinkNode(5, null); // ln1 =9,5 ln2=5
+		ln2 = new ListNode(5); // ln1 =9,5 ln2=5
 		node  = addInstance.addTwoNumbers(ln1, ln2); //both null
-		assertTrue(compAddTrue(node, 59+5));
+		assertTrue(LinkListUtils.isReverseLinkedListEqualsTo(node, 59+5));
 		
-		ln2.next = new LinkNode(8, null); // ln1 =9,5 ln2=5,8
+		ln2.next = new ListNode(8); // ln1 =9,5 ln2=5,8
 		node  = addInstance.addTwoNumbers(ln1, ln2); //both null
-		assertTrue(compAddTrue(node, 59+85));
+		assertTrue(LinkListUtils.isReverseLinkedListEqualsTo(node, 59+85));
 	}
 
 }
